@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARKLib", "ARKLib\ARKLib.vcxproj", "{1B27BC50-0E2A-478B-B31B-4996F10D4503}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARKRun", "..\..\..\..\..\ArkRun\Project\Windows\VS2012\ARKRun\ARKRun.vcxproj", "{A64EA197-A0A6-49C6-8305-9B14DFDB671F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Spider", "..\..\..\..\..\..\Application\Spider\Project\Windows\VS2012\Spider\Spider.vcxproj", "{38D9FD5D-5785-4DD4-B32F-0E9F1305E301}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B27BC50-0E2A-478B-B31B-4996F10D4503}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1B27BC50-0E2A-478B-B31B-4996F10D4503}.Debug|Win32.Build.0 = Debug|Win32
+		{1B27BC50-0E2A-478B-B31B-4996F10D4503}.Release|Win32.ActiveCfg = Release|Win32
+		{1B27BC50-0E2A-478B-B31B-4996F10D4503}.Release|Win32.Build.0 = Release|Win32
+		{A64EA197-A0A6-49C6-8305-9B14DFDB671F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A64EA197-A0A6-49C6-8305-9B14DFDB671F}.Debug|Win32.Build.0 = Debug|Win32
+		{A64EA197-A0A6-49C6-8305-9B14DFDB671F}.Release|Win32.ActiveCfg = Release|Win32
+		{A64EA197-A0A6-49C6-8305-9B14DFDB671F}.Release|Win32.Build.0 = Release|Win32
+		{38D9FD5D-5785-4DD4-B32F-0E9F1305E301}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38D9FD5D-5785-4DD4-B32F-0E9F1305E301}.Debug|Win32.Build.0 = Debug|Win32
+		{38D9FD5D-5785-4DD4-B32F-0E9F1305E301}.Release|Win32.ActiveCfg = Release|Win32
+		{38D9FD5D-5785-4DD4-B32F-0E9F1305E301}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

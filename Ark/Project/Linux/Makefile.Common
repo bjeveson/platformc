@@ -1,0 +1,80 @@
+################################################################################
+# 归档工具
+################################################################################
+AR := $(CROSS_COMPILE)ar
+AR_CREATE := $(AR) rcs
+AR_EXTRACT := $(AR) x
+
+################################################################################
+# 一些shell命令封装
+################################################################################
+RM := rm -rf
+CP := cp -rf
+LS := ls -l
+CD := cd
+TAR := tar czf
+CC:= gcc
+
+################################################################################
+# 公共编译规则
+################################################################################
+CFLAG := -c -g
+
+MYLIB_INC:= $(addprefix -I$(MYLIB_PATH_ROOT)/, $(COMMON_MYLIB_H_DIR))
+
+$(PREFIXPROJECTNAME)_INC := $(addprefix -I, $($(PREFIXPROJECTNAME)_H_DIR))
+
+$(PREFIXPROJECTNAME)_OBJ_DIR := $(addprefix $(OBJ_DIR)/, $($(PREFIXPROJECTNAME)_OBJ_C_DIR) $($(PREFIXPROJECTNAME)_OBJ_CPP_DIR))
+
+MAKE_C := @$(CC) $(CFLAG) $($(PREFIXPROJECTNAME)_INC) $(MYLIB_INC)
+
+STANDARD_C_LIB	:= -lpthread -I/usr/include/mysql -L/usr/lib64/mysql -lmysqlclient_r  -lstdc++ -rdynamic
+
+################################################################################
+# 本工程目标
+################################################################################
+PROJECT: project_create_subdir $($(PREFIXPROJECTNAME)_OBJ) EXE
+
+EXE:
+	@echo Create EXE :$(OBJ_DIR)/$(ExeName)
+	@gcc -g -o $(OBJ_DIR)/$(ExeName) $($(PREFIXPROJECTNAME)_OBJ) $(MYLIB_PATH_ROOT)/Project/Linux/debug/MyLib.a $(STANDARD_C_LIB) -ldl -lrt
+
+depend: 
+	@echo Target $(PROJECT_DEP_FILE) ...
+	@$(MYLIB_PATH_ROOT)/Make/scan.sh $(PROJ_ROOT) $($(PREFIXPROJECTNAME)_DEP_FILE) $(PREFIXPROJECTNAME)
+
+run:
+	$(OBJ_DIR)/$(ExeName)
+
+clean:
+	@echo Target $@ ...
+	@$(RM) $(OBJ_DIR) $(PROJECT_DEP_FILE) *.log *.bak
+	@echo
+
+project_create_subdir:
+	@echo Target $@ ...
+	@for i in $($(PREFIXPROJECTNAME)_OBJ_DIR); \
+	do \
+		if test ! -d $$i; then \
+			mkdir -p $$i; \
+		fi; \
+	done
+	@echo
+
+################################################################################
+# 所有目标
+################################################################################
+all:
+	make -C $(MYLIB_PATH_ROOT)/Project/Linux
+	make PROJECT
+
+depend_all: 
+	make -C $(MYLIB_PATH_ROOT)/Project/Linux depend
+	@echo Target $(PROJECT_DEP_FILE) ...
+	@$(MYLIB_PATH_ROOT)/Project/Linux/scan.sh $(PROJ_ROOT) $(PROJECT_DEP_FILE) $(PREFIXPROJECTNAME) $(IGNORE_DIR)
+	
+clean_all:
+	make -C $(MYLIB_PATH_ROOT)/Project/Linux clean
+	@echo Target $@ ...
+	make clean
+	@echo

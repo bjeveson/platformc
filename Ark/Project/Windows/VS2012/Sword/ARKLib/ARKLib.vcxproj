@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1B27BC50-0E2A-478B-B31B-4996F10D4503}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ARKLib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\..\..\..\..\Bit\include;..\..\..\..\..\Char\include;..\..\..\..\..\DynMemMan\include;..\..\..\..\..\FileSys\include;..\..\..\..\..\FuncNameMap\include;..\..\..\..\..\Hash\include;..\..\..\..\..\HexConversion\include;..\..\..\..\..\List\include;..\..\..\..\..\Log\include;..\..\..\..\..\Maths\include;..\..\..\..\..\MemDbS\include;..\..\..\..\..\Public\LibInit\include;..\..\..\..\..\Public\OSI\include;..\..\..\..\..\Public\TypeDefine\include;..\..\..\..\..\Queue\include;..\..\..\..\..\Search\include;..\..\..\..\..\Shell\include;..\..\..\..\..\SocketTransData\include;..\..\..\..\..\Sort\include;..\..\..\..\..\Stack\include;..\..\..\..\..\Strings\include;..\..\..\..\..\Stub\include;..\..\..\..\..\TestDrv\include;..\..\..\..\..\TimeTag\include;$(IncludePath)</IncludePath>
+    <TargetName>ARK</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Bit\include\Bit.h" />
+    <ClInclude Include="..\..\..\..\..\Char\include\Char.h" />
+    <ClInclude Include="..\..\..\..\..\DynMemMan\include\DynMemMan.h" />
+    <ClInclude Include="..\..\..\..\..\FileSys\include\FileSys.h" />
+    <ClInclude Include="..\..\..\..\..\FuncNameMap\include\FuncName.h" />
+    <ClInclude Include="..\..\..\..\..\Hash\include\Hash.h" />
+    <ClInclude Include="..\..\..\..\..\HexConversion\include\HexConversion.h" />
+    <ClInclude Include="..\..\..\..\..\List\include\List.h" />
+    <ClInclude Include="..\..\..\..\..\Log\include\Log.h" />
+    <ClInclude Include="..\..\..\..\..\Maths\include\Maths.h" />
+    <ClInclude Include="..\..\..\..\..\MemDbS\include\MemDbS.h" />
+    <ClInclude Include="..\..\..\..\..\Public\LibInit\include\LibInit.h" />
+    <ClInclude Include="..\..\..\..\..\Public\OSI\include\Arch.h" />
+    <ClInclude Include="..\..\..\..\..\Public\OSI\include\OSI.h" />
+    <ClInclude Include="..\..\..\..\..\Public\TypeDefine\include\ErrorCode.h" />
+    <ClInclude Include="..\..\..\..\..\Public\TypeDefine\include\VarType.h" />
+    <ClInclude Include="..\..\..\..\..\Queue\include\Queue.h" />
+    <ClInclude Include="..\..\..\..\..\Search\include\Search.h" />
+    <ClInclude Include="..\..\..\..\..\Shell\include\Shell.h" />
+    <ClInclude Include="..\..\..\..\..\SocketTransData\include\SocketTransData.h" />
+    <ClInclude Include="..\..\..\..\..\Sort\include\Sort.h" />
+    <ClInclude Include="..\..\..\..\..\Stack\include\Stack.h" />
+    <ClInclude Include="..\..\..\..\..\Strings\include\Strings.h" />
+    <ClInclude Include="..\..\..\..\..\Stub\include\stub.h" />
+    <ClInclude Include="..\..\..\..\..\TestDrv\include\TestDrv.h" />
+    <ClInclude Include="..\..\..\..\..\TimeTag\include\TimeTag.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Bit\src\Bit.c" />
+    <ClCompile Include="..\..\..\..\..\Char\src\Char.c" />
+    <ClCompile Include="..\..\..\..\..\DynMemMan\src\DynMemMan.c" />
+    <ClCompile Include="..\..\..\..\..\FileSys\src\FileSys.c" />
+    <ClCompile Include="..\..\..\..\..\FuncNameMap\src\FuncName.c" />
+    <ClCompile Include="..\..\..\..\..\FuncNameMap\src\FuncNameMap.c" />
+    <ClCompile Include="..\..\..\..\..\Hash\src\Hash.c" />
+    <ClCompile Include="..\..\..\..\..\HexConversion\src\HexConversion.c" />
+    <ClCompile Include="..\..\..\..\..\List\src\List.c" />
+    <ClCompile Include="..\..\..\..\..\Log\src\Log.c" />
+    <ClCompile Include="..\..\..\..\..\Maths\src\Maths.c" />
+    <ClCompile Include="..\..\..\..\..\MemDbS\src\MemDbS.c" />
+    <ClCompile Include="..\..\..\..\..\Public\LibInit\src\LibInit.c" />
+    <ClCompile Include="..\..\..\..\..\Public\OSI\src\OSI.c" />
+    <ClCompile Include="..\..\..\..\..\Queue\src\Queue.c" />
+    <ClCompile Include="..\..\..\..\..\Search\src\Search.c" />
+    <ClCompile Include="..\..\..\..\..\Shell\src\Shell.c" />
+    <ClCompile Include="..\..\..\..\..\SocketTransData\src\SocketTransData.c" />
+    <ClCompile Include="..\..\..\..\..\Sort\src\Sort.c" />
+    <ClCompile Include="..\..\..\..\..\Stack\src\Stack.c" />
+    <ClCompile Include="..\..\..\..\..\Strings\src\Strings.c" />
+    <ClCompile Include="..\..\..\..\..\Stub\src\stub.c" />
+    <ClCompile Include="..\..\..\..\..\TestDrv\src\TestDrv.c" />
+    <ClCompile Include="..\..\..\..\..\TimeTag\src\TimaTag.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
